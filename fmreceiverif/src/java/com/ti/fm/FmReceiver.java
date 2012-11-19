@@ -103,6 +103,11 @@ public class FmReceiver {
 
             mService = null;
             if (mServiceListener != null) {
+                BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();    
+                if (mBluetoothAdapter.isEnabled()) {
+                    Log.i(TAG, "Disabling bluetooth");
+                    mBluetoothAdapter.disable();     
+                }
                 mServiceListener.onServiceDisconnected();
             }
         }
