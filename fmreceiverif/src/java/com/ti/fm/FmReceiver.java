@@ -86,11 +86,6 @@ public class FmReceiver {
             mService = IFmReceiver.Stub.asInterface(service);
             if (mServiceListener != null) {
                 Log.i(TAG, "Sending callback");
-                BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();    
-                if (!mBluetoothAdapter.isEnabled()) {
-                    Log.i(TAG, "Enabling bluetooth");
-                    mBluetoothAdapter.enable();     
-                }
                 mServiceListener.onServiceConnected();
             } else {
                 Log.i(TAG, "mService is NULL");
