@@ -31,7 +31,6 @@
  \*******************************************************************************/
 package com.ti.fm;
 
-import android.bluetooth.BluetoothAdapter;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -98,11 +97,6 @@ public class FmReceiver {
 
             mService = null;
             if (mServiceListener != null) {
-                BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();    
-                if (mBluetoothAdapter.isEnabled()) {
-                    Log.i(TAG, "Disabling bluetooth");
-                    mBluetoothAdapter.disable();     
-                }
                 mServiceListener.onServiceDisconnected();
             }
         }
