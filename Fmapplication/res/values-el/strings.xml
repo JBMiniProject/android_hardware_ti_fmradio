@@ -97,8 +97,6 @@
     <string name="edit_station">Επεξεργασία</string>
     <string name="remove_station">Αφαίρεση</string>
     <string name="confirm_action_remove_station">Είστε σίγουρος ότι θέλετε να αφαιρέσετε τον σταθμο:</string>
-    <string name="earphones_not_plugged">Δεν εντοπίστηκαν ακουστικά. Παρακαλώ συνδέστε τα ακουστικά πριν την εκκίνηση της εφαρμογής.
-    </string>
 
     <!-- Tune Screen -->
     <string name="valid_frequency">Εισάγετε μια έγκυρη συχνότητα!</string>
