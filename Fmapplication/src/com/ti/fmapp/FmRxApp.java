@@ -32,6 +32,7 @@
 package com.ti.fmapp;
 
 import android.app.*;
+import android.bluetooth.*;
 import android.content.*;
 import android.content.res.Configuration;
 import android.media.AudioManager;
@@ -211,6 +212,7 @@ public class FmRxApp extends Activity implements View.OnClickListener,
 
     private OrientationListener mOrientationListener;
     private boolean hasInitializedFMReceiver = false;
+    private BluetoothAdapter mBluetoothAdapter;
 
     Context mContext;
 
@@ -286,6 +288,11 @@ public class FmRxApp extends Activity implements View.OnClickListener,
         /*
          * Need to enable the FM if it was not enabled earlier
          */
+
+        mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        if (!mBluetoothAdapter.isEnabled()) {
+            mBluetoothAdapter.enable();
+        }
 
         sFmReceiver = new FmReceiver(this, this);
 
